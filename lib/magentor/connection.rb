@@ -11,6 +11,7 @@ module Magento
     def client
       @client ||= XMLRPC::Client.new(config[:host], config[:path], config[:port])
       @client.http_header_extra = { 'Content-Type' => 'text/xml' }
+      @client
     end
 
     def connect
